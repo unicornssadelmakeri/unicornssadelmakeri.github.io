@@ -43,21 +43,18 @@
     background-color: var(--center-bg-color);
     width: 100%;
     height: 65vh;
-    justify-content: center;
     align-items: center;
     font-size: 3rem;
-    gap: 10px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    gap: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .information-content {
     display: flex;
     flex-direction: column;
-    height: 80%;
     width: 600px;
     background-color: var(--center-content-color);
-    justify-content: center;
     align-items: center;
     padding: 5px;
     border-radius: 15px;
@@ -67,7 +64,6 @@ h {
     font-family: Imperial Script;
 }
 
-
 p {
     font-size: 1.5rem;
 }
@@ -75,7 +71,6 @@ p {
 .pricing-content {
     display: flex;
     flex-direction: column;
-    height: 80%;
     width: 600px;
     background-color: var(--center-content-color);
     justify-content: center;
