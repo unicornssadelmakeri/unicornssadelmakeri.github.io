@@ -1,6 +1,7 @@
 :root {
     --center-bg-color: rgb(252, 237, 225, 1);
-    --center-content-color: rgb(255, 243, 234, 1);
+    --center-bg-color-end: rgb(255, 250, 242, 1);
+    --center-content-color: rgb(255, 246, 240, 1);
     --bottom-bg-color: rgb(185, 170, 155, 1);
 }
 
@@ -9,7 +10,7 @@
     display: flex;
     overflow: hidden;
     width: 100%;
-    height: 50vh;
+    height: 60vh;
     margin: 0;
     justify-content: center;
     align-items: center;
@@ -17,8 +18,8 @@
 }
 
 .picture-container img {
-    flex: 1; /* Each image gets equal space */
-    object-fit: cover; /* Crop images without distortion */
+    flex: 1;
+    object-fit: cover;
     height: 100%;
     width: 100%;
 }
@@ -30,31 +31,55 @@
     transform: translate(-50%, -50%);
     color: white;
     font-size: 9rem;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Optional: makes text stand out */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     text-align: center;
     z-index: 1;
     pointer-events: none;
     text-shadow: 0 0 5px black, 0 0 10px black;
 }
 
-.pricing-information-container {
+.center-container {
     display: flex;
     flex-direction: column;
-    background-color: var(--center-bg-color);
+    background: linear-gradient(to bottom, var(--center-bg-color), white);
     width: 100%;
-    height: 65vh;
+    height: auto;
     align-items: center;
     font-size: 3rem;
-    gap: 40px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    gap: 70px;
+    padding-bottom: 80px;
+}
+
+.information-container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    gap: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.information-picture-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.information-picture-container img {
+    height: 420px;
+    width: 450px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .information-content {
     display: flex;
     flex-direction: column;
     width: 600px;
-    background-color: var(--center-content-color);
+    background: linear-gradient(to top, var(--center-content-color), white);
     align-items: center;
     padding: 5px;
     border-radius: 15px;
@@ -72,31 +97,115 @@ p {
     display: flex;
     flex-direction: column;
     width: 600px;
-    background-color: var(--center-content-color);
+    background: linear-gradient(to top, var(--center-content-color), white);
     justify-content: center;
     align-items: center;
     padding: 5px;
     border-radius: 15px;
 }
 
+.underline-information {
+    height: 2px;
+    width: 80%;
+    margin: 0 auto 20px auto;
+    background: linear-gradient(to right, transparent, black, transparent);
+}
+
+.underline-pricing {
+    height: 2px;
+    width: 50%;
+    margin: 0 auto 20px auto;
+    background: linear-gradient(to right, transparent, black, transparent);
+}
+
+.underline-contact {
+    height: 2px;
+    width: 90%;
+    margin: 0 auto 20px auto;
+    background: linear-gradient(to right, transparent, white, transparent);
+}
+
 .contact-container {
+    position: bottom;
     display: flex;
     background-color: var(--bottom-bg-color);
     width: 100%;
-    height: 15vh;
+    height: auto;
     justify-content: center;
     align-items: center;
     font-size: 3rem;
 }
 
-.contact-content {
-    height: 80%;
+.contact-center-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
     width: auto;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.contact-center-container h {
+    color: white;
+    text-shadow: 0 0 2px black, 0 0 3px black;
+    pointer-events: none;
+}
+
+.contact-information-container {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 30px;
+}
+
+.contact-information-container i {
+    font-size: 32px;
+    color: white;
+    transition: color 0.3s;
+}
+
+.contact-info {
+    display: flex;
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    color: white;
+}
+
+.contact-info p {
+    text-shadow: 0 0 2px black, 0 0 2px black;
+}
+
+.social-icons {
+    display: flex;
+    gap: 30px;
+}
+
+.social-icons img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
 }
 
 .imperial-script-regular {
-  font-family: "Imperial Script", cursive;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Imperial Script", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
+.shadow-container {
+    position: absolute;
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(to bottom, black, transparent);
+}
