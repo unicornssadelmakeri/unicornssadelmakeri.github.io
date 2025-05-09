@@ -1,0 +1,27 @@
+{
+    "item1": {
+        "title": "Sadelkontroll",
+        "description": "Sadelkontroll med befintliga sadlar max 2st.",
+        "price": "900kr"
+    },
+    "item2": {
+        "title": "Sadel Utprovning",
+        "description": "Sadel utprovning av ny eller begagnad sadel, 1,5-2tim.",
+        "price": "1.800kr"
+    },
+    "item3": {
+        "title": "Toppstoppning",
+        "description": "Anpassa nuvarande stoppning efter hästens rygg. Det innebär att stoppning redan är mjuk och utan knölar.",
+        "price": "1.800kr"
+    },
+    "item4": {
+        "title": "Helomstoppning",
+        "description": "jag byter ut all stoppning i sadel bossan för den har antingen blivit för hård eller är för knölig. Byter ut till 100% äkta fårull som är spänstig och mjuk.",
+        "price": "2.800kr"
+    },
+    "item5": {
+        "title": "Reseersättning",
+        "description": "Reseersättning vid relevanta intervall.",
+        "price": "70kr-50kr/mil"
+    }
+}

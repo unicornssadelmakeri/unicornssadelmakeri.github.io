@@ -1,63 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="index.js"></script>
     <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body style="margin: 0;">
 
-    <div class="picture-container">
-        <img src="assets/picture-1.jpg" alt="image 1">
-        <img src="assets/picture-2.jpg" alt="image 2">
-        <img src="assets/picture-3.jpg" alt="image 2">
-        <div class="title-container">
-            <h>Unicorns Sadelmakeri</h>
+    <div class="top-container">
+        <div class="picture-container">
+            <img src="assets/banner/banner.PNG" alt="image 2">
+            <div class="title-container">
+                <h1>Unicorns Sadelmakeri</h1>
+            </div>
         </div>
+        <img id="scrollArrow" class="arrow-down" src="assets/arrow-down.png"></img>
     </div>
 
     <div class="center-container">
-        <div class="shadow-container"></div>
-
-        <div class="information-container">
-            <div class="information-content">
-                <h>Information</h>
-                <div class="underline-information"></div>
-                <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. suspendisse porta venenatis ex, eget sodales nisi feugiat a. pellentesque finibus nisl ac orci porttitor commodo. vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; cras tellus nibh, euismod vitae pharetra et, mollis sed lorem. </p>
-            </div>
-            <div class="information-picture-container">
-                <img src="assets/picture-1.jpg" alt="image 1">
-            </div>
-        </div>
-            
-
-        <div class="information-container">
-            <div class="information-picture-container">
-                <img src="assets/picture-3.jpg" alt="image 1">
-            </div>
-            <div class="pricing-content">
-                <h>Prices</h>
-                <div class="underline-pricing"></div>
-                <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. suspendisse porta venenatis ex, eget sodales nisi feugiat a. pellentesque finibus nisl ac orci porttitor commodo. vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; cras tellus nibh, euismod vitae pharetra et, mollis sed lorem. </p>
-            </div>
+        <div class="start-text">
+            <p id="center-paragraph"></p>
         </div>
 
+        <div class="c1-information">
+            <div class="c2 information">
+                <div class="c3 information">
+                    <div class="c4 paragraph">
+                        <h2>Information</h2>
+                        <div class="underline information"></div>
+                        <p id="information"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="c2 information">
+                <div class="c2 picture">
+                    <div class="c-flair">
+                        <div class="flair top">
+                            <div class="top horizontal left"> </div>
+                            <div class="top vertical left"> </div>
+                        </div>
+                        <div class="right flair bottom">
+                            <div class="bottom horizontal right"> </div>
+                            <div class="bottom vertical right"> </div>
+                        </div>
+                    </div>
+                    <div class="c3 picture">
+                        <div class="c4 picture">
+                            <div class="c5 picture by-saddles">
+                                <img src="assets/vid-sadlar1.JPEG" alt="image 1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="c1-information">
+            <div class="c2 information">
+                <div class="c2 picture">
+                    <div class="c-flair">
+                        <div class="right flair top">
+                            <div class="top horizontal right"> </div>
+                            <div class="top vertical right"> </div>
+                        </div>
+                        <div class="flair bottom">
+                            <div class="bottom horizontal left"> </div>
+                            <div class="bottom vertical left"> </div>
+                        </div>
+                    </div>
+                    <div class="c3 picture">
+                        <div class="c4 picture">
+                            <div class="c5 picture working">
+                                <img src="assets/arbetar1.JPEG" alt="image 1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c2 information">
+                <div class="c3 pricing">
+                    <div class="c4 pricing">
+                        <h2>Priser</h2>
+                        <div class="underline pricing"></div>
+                        <div id="pricing" class="c5 pricing"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="contact-container">
         <div class="contact-center-container">
-            <h>Contact Information</h>
-            <div class="underline-contact"></div>
+            <h2>Kontact Information</h2>
+            <div class="underline contact"></div>
             <div class="contact-information-container">
                 <div class="contact-info">
                     <i class="fa-solid fa-mobile-screen-button"></i>
-                    <p>070-123 45 67</p>
+                    <p>070-636 49 78</p>
                 </div>
                 <div class="contact-info">
                     <i class="fas fa-envelope"></i>
-                    <p>test@test.com</p>
+                    <p>unicornssadelmakeri@gmail.com</p>
                 </div>
             </div>
 
@@ -73,6 +119,14 @@
         </div>
     </div>
 
-
+    <script>
+        document.getElementById("scrollArrow").addEventListener("click", function () {
+            window.scrollBy({
+                top: window.innerHeight * 0.8,
+                left: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
 </body>
 </html>
