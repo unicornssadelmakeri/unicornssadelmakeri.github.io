@@ -6,15 +6,7 @@ fetch('assets/information.json')
         const paragraphArr = Object.values(data.paragraphs);
         document.getElementById('center-paragraph').textContent = paragraphArr[0];
         document.getElementById('information').textContent = paragraphArr[1];
-        
-        let html = '';
-        paragraphArr.forEach((item, index) => {
-            console.log(index)
-            if(index < 2) { return; }
-            html += `<p class="more-item">${item}</p>`;
-        });
 
-        document.getElementById('more-text').innerHTML = html;
     }).catch(error => console.error('Error loading text:', error));
 
 fetch('assets/prices.json')
