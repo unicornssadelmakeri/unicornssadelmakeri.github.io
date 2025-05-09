@@ -1,14 +1,23 @@
-fetch('information.txt')
-    .then(response => response.text())
+// Handles the short information text and center paragraph
+fetch('assets/information.json')
+    .then(response => response.json())
     .then(data => {
-        var text = data;
-        var textArr = text.split("~");
-        document.getElementById('information').textContent = textArr[0];
-        document.getElementById('center-paragraph').textContent = textArr[7];
-    })
-    .catch(error => console.error('Error loading text:', error));
 
-fetch('prices.json')
+        const paragraphArr = Object.values(data.paragraphs);
+        document.getElementById('center-paragraph').textContent = paragraphArr[0];
+        document.getElementById('information').textContent = paragraphArr[1];
+        
+        let html = '';
+        paragraphArr.forEach((item, index) => {
+            console.log(index)
+            if(index < 2) { return; }
+            html += `<p class="more-item">${item}</p>`;
+        });
+
+        document.getElementById('more-text').innerHTML = html;
+    }).catch(error => console.error('Error loading text:', error));
+
+fetch('assets/prices.json')
     .then(response => response.json())
     .then(data => {
         let html = '<div class="pricing-list">';
@@ -42,5 +51,27 @@ fetch('prices.json')
                 desc.classList.toggle('hidden');
             });
         });
+    }).catch(error => console.error('Error loading JSON:', error));
+
+fetch('assets/information.json')
+    .then(response => response.json())
+    .then(data => {
+        const paragraphArr = Object.values(data.paragraphs);
+
+        let html = '';
+        paragraphArr.forEach((item, index) => {
+            if(index < 2) { return; }
+            html += `<p class="more-item">${item}</p>`;
+        });
+
+        document.getElementById('more-text').innerHTML = html;
+
+        const container = document.getElementById('more-text');
+        const toggleArrow = document.getElementById('toggle-arrow');
+
+        toggleArrow.addEventListener('click', () => {
+            container.classList.toggle('expanded');
+            toggleArrow.classList.toggle('expanded');
+        });
     })
-    .catch(error => console.error('Error loading JSON:', error));
+    .catch(error => console.error('Error loading text:', error));

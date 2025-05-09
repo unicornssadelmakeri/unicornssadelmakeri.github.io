@@ -26,7 +26,7 @@
             <p id="center-paragraph"></p>
         </div>
 
-        <div class="c1-information">
+        <div class="c1 information">
             <div class="c2 information">
                 <div class="c3 information">
                     <div class="c4 paragraph">
@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        <div class="c1-information">
+        <div class="c1 information">
             <div class="c2 information">
                 <div class="c2 picture">
                     <div class="c-flair">
@@ -91,15 +91,34 @@
                 </div>
             </div>
         </div>
+    </divk
+
+    <div class="c1 more">
+        <div class="c2 more">
+            <h2>Mer om mig</h2>
+            <div class="underline more"></div>
+            <div class="c3 more" id="more-text">
+                <!--<p id="more-text"></p>-->
+            </div>
+            <div class="arrow down" id="toggle-arrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
+                    <g>
+                    <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="underline more"></div>
+        </div>
     </div>
+
     <div class="contact-container">
         <div class="contact-center-container">
-            <h2>Kontact Information</h2>
+            <h2>Kontakt Information</h2>
             <div class="underline contact"></div>
             <div class="contact-information-container">
                 <div class="contact-info">
                     <i class="fa-solid fa-mobile-screen-button"></i>
-                    <p>070-636 49 78</p>
+                    <p>Eva Vadman: +46 (0)706364978</p>
                 </div>
                 <div class="contact-info">
                     <i class="fas fa-envelope"></i>
@@ -128,5 +147,21 @@
             });
         });
     </script>
+    <!--<script>
+        fetch('assets/information.json')
+            .then(response => response.json())
+            .then(data => {
+                const paragraphs = Object.values(data.paragraphs);
+                document.getElementById('more-text').textContent = paragraphs.join('\n\n');
+
+                const container = document.getElementById('more-text-container');
+                const toggleArrow = document.getElementById('arrow-down');
+
+                toggleArrow.addEventListener('click', () => {
+                    container.classList.toggle('expanded');
+                });
+            })
+            .catch(error => console.error('Error loading text:', error));
+    </script>-->
 </body>
 </html>
