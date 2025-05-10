@@ -3,9 +3,24 @@ fetch('assets/information.json')
     .then(response => response.json())
     .then(data => {
 
-        const paragraphArr = Object.values(data.paragraphs);
-        document.getElementById('center-paragraph').textContent = paragraphArr[0];
-        document.getElementById('information').textContent = paragraphArr[1];
+        //1const paragraphArr = Object.values(data.paragraphs);
+        const sec1 = Object.values(data.section1);
+        document.getElementById('section-1-title').textContent = sec1[0];
+        document.getElementById('section-1-paragraph').textContent = sec1[1];
+        console.log(sec1);
+
+        const sec2 = Object.values(data.section2);
+        document.getElementById('section-2-title').textContent = sec2[0];
+        document.getElementById('section-2-paragraph').textContent = sec2[1];
+        console.log(sec2[0]);
+
+        const sec3 = Object.values(data.section3);
+        document.getElementById('section-3-title').textContent = sec3[0];
+        console.log(sec3[0]);
+
+        const sec4 = Object.values(data.section4);
+        document.getElementById('section-4-title').textContent = sec4[0];
+        console.log(sec4[0]);
 
     }).catch(error => console.error('Error loading text:', error));
 
@@ -48,11 +63,11 @@ fetch('assets/prices.json')
 fetch('assets/information.json')
     .then(response => response.json())
     .then(data => {
-        const paragraphArr = Object.values(data.paragraphs);
-
+        const sec4 = Object.values(data.section4);
         let html = '';
-        paragraphArr.forEach((item, index) => {
-            if(index < 2) { return; }
+        sec4.forEach((item, index) => {
+            if(index == 0) { 
+                return; }
             html += `<p class="more-item">${item}</p>`;
         });
 

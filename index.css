@@ -84,31 +84,7 @@
     cursor: pointer;
 }
 
-.center-container {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    width: 100%;
-    height: auto;
-    align-items: center;
-    font-size: 3rem;
-    padding-bottom: 80px;
-    gap: 4vw;
-}
-
-.start-text {
-    display: flex;
-    width: 60vw;
-    height: 50vh;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.start-text p {
-    font-size: 1.3rem;
-}
-
+/*   ---------------- TEXT START ----------------   */
 h1 {
     font-family: Imperial Script;
     color: white;
@@ -155,9 +131,15 @@ p {
     color: var(--dark-blue)
 }
 
+/*   ---------------- TEXT END ----------------   */
+/*   ---------------- UNDERLINE START ----------------   */
 .underline {
     height: 1px;
     width: 100%;
+}
+
+.underline.sec1{
+    background: linear-gradient(to right, transparent, var(--dark-blue), transparent);
 }
 
 .underline.more {
@@ -175,6 +157,7 @@ p {
 .underline.contact {
     background: linear-gradient(to right, transparent, white, transparent);
 }
+/*   ---------------- UNDERLINE END ----------------   */
 
 .contact-container {
     position: bottom;
@@ -258,10 +241,29 @@ p {
     font-style: normal;
 }
 
+
+/*   ---------------- CONTAINERS START ----------------   */
+.center-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    font-size: 3rem;
+    padding-bottom: 80px;
+    gap: 4vw;
+}
+
 .c1 {
     display: flex;
     height: 60vh; 
     width: 100%;
+}
+
+.c1.center {
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -272,6 +274,15 @@ p {
         width: 100%;
     }
 
+}
+
+.c2.center {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .c2.information {
@@ -359,14 +370,12 @@ p {
 }
 
 .c1.more {
-    height: 40vh;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
     flex-direction: column;
-    background-color: cornflowerblue;
 }
 
 .c2.more {
@@ -375,6 +384,7 @@ p {
     align-items: center;
     width: 40%;
     height: 100%;
+    
 }
 
 .c3.more {
@@ -382,6 +392,7 @@ p {
     flex-direction: column;
     width: 90%;
 }
+/*   ---------------- CONTAINERS END ----------------   */
 
 .c-flair {
     position: absolute;
@@ -498,9 +509,8 @@ p {
     transition: opacity 0.4s ease;
 }
 
-/* Expanded state */
 #more-text.expanded {
-    max-height: 1000vh; /* Effectively "auto" */
+    max-height: 10000px;
 }
 
 #more-text.expanded::after {
