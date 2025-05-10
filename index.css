@@ -7,6 +7,7 @@
     --medium-blue: rgb(121,202,234);
     --dark-blue: rgb(70,132,169);
     --light-grey: rgb(250,250,250);
+    --medium-grey: rgb(150,150,150);
     --very-dark-blue: rgb(56, 67, 74)
 }
 
@@ -43,10 +44,10 @@
     pointer-events: none;
 }
 
+/*   ---------------- ARROW START ----------------   */
 .arrow {
     width: 1.5em;
     height: 1.5em;
-    fill: var(--dark-blue);
     display: block;
     cursor: pointer;
 }
@@ -56,33 +57,38 @@
     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.5));
 }
 
-.arrow-down {
-  position: absolute;
-  width: auto !important;
-  height: 13vh !important;
-  left: 50%;
-  transform: translateY(-100%) translateX(-50%) rotate(180deg); /* Center and rotate */
-  opacity: 65%;
+.arrow.down {
+    position: absolute;
+    left: 50%;
+    bottom: 3vh;
+    width: 4em;
+    height: 4em;
+    fill: var(--medium-grey);
 }
 
-.arrow-down:hover {
-    transform: translateY(-110%) translateX(-50%) rotate(180deg);
-    cursor: pointer;
+.arrow.more {
+    fill: var(--dark-blue);
+    transition: transform 0.3s ease;
 }
 
-.arrow-down {
-  position: absolute;
-  width: auto !important;
-  height: 13vh !important;
-  left: 50%;
-  transform: translateY(-100%) translateX(-50%) rotate(180deg); /* Center and rotate */
-  opacity: 65%;
+.arrow.price-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0.5em;
+    height: 0.5em;
+    fill: var(--dark-blue);
+    transition: transform 0.3s ease;
 }
 
-.arrow-down:hover {
-    transform: translateY(-110%) translateX(-50%) rotate(180deg);
-    cursor: pointer;
+#price-arrow.expanded {
+    transform: rotate(180deg);
 }
+
+#toggle-arrow.expanded {
+    transform: rotate(180deg);
+}
+/*   ---------------- ARROW END ----------------   */
 
 /*   ---------------- TEXT START ----------------   */
 h1 {
@@ -159,6 +165,7 @@ p {
 }
 /*   ---------------- UNDERLINE END ----------------   */
 
+/*   ---------------- CONTACT START ----------------   */
 .contact-container {
     position: bottom;
     display: flex;
@@ -240,7 +247,7 @@ p {
     font-weight: 400;
     font-style: normal;
 }
-
+/*   ---------------- CONTACT END ----------------   */
 
 /*   ---------------- CONTAINERS START ----------------   */
 .center-container {
@@ -474,7 +481,12 @@ p {
     display: flex;
     cursor: pointer;
     justify-content: space-between;
-    width: 40%;
+    width: 100%;
+    align-items: center;
+}
+
+.pricing-header h3 {
+    margin: 0;
 }
 
 .pricing-description {
@@ -482,7 +494,7 @@ p {
     color: var(--dark-blue);
 }
 
-.pricing-description h3 {
+.pricing-description p {
     text-align: left;
 }
 
@@ -517,6 +529,3 @@ p {
     opacity: 0;
 }
 
-#toggle-arrow.expanded {
-    transform: rotate(180deg);
-}

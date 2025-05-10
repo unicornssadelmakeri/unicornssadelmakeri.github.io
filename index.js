@@ -35,9 +35,17 @@ fetch('assets/prices.json')
                     <div class="pricing-header">
                         <h3 class="title">${item.title}</h3>
                         <h3 class="price">${item.price}</h3>
+                        <div class="arrow price-arrow" id="price-arrow">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
+                                <g>
+                                    <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/>
+                                </g>
+                            </svg>
+                        </div>
                     </div>
-                    <div class="underline pricing-description hidden">
-                        <h3>${item.description}</h3>
+                    <div class="pricing-description hidden">
+                        <p>${item.description}</p>
+                        <div class="underline pricing-description"></div>
                     </div>
                 </div>
             `;
@@ -50,11 +58,17 @@ fetch('assets/prices.json')
             header.addEventListener('click', () => {
                 const allDescriptions = document.querySelectorAll('.pricing-description');
                 const desc = header.nextElementSibling;
+                const arrow = header.querySelector('.price-arrow');
 
                 allDescriptions.forEach(d => {
                     if (d !== desc) d.classList.add('hidden');
                 });
 
+                document.querySelectorAll('.price-arrow').forEach(a => {
+                    if (a !== arrow) a.classList.remove('expanded');
+                });
+
+                arrow.classList.toggle('expanded');
                 desc.classList.toggle('hidden');
             });
         });
@@ -82,3 +96,45 @@ fetch('assets/information.json')
         });
     })
     .catch(error => console.error('Error loading text:', error));
+
+// Select the element to watch
+const pictureContainer = document.querySelector('.c2.picture');
+
+// Check if the element exists before adding event listeners
+if (pictureContainer) {
+    // Function to adjust padding based on vertical position
+    function adjustPadding() {
+        const rect = pictureContainer.getBoundingClientRect();
+        
+        // Get the element's position relative to the viewport
+        const elementTop = rect.top;  // Distance from top of the viewport
+        const elementHeight = rect.height;  // Element's height
+        
+        // Get the height of the viewport
+        const viewportHeight = window.innerHeight;
+
+        // Here, you can adjust the padding based on the position of the element
+        let newPadding = '1vw';  // Default padding
+
+        // Adjust the padding dynamically based on the element's position
+        if (elementTop < viewportHeight * 0.5) {
+            newPadding = '3vw';  // Increase padding
+        } else if (elementTop < viewportHeight * 0.75) {
+            newPadding = '2vw';  // Medium padding
+        } else {
+            newPadding = '0.5vw';  // Decrease padding
+        }
+
+        // Apply the new padding to the element
+        pictureContainer.style.padding = newPadding;
+    }
+
+    // Call the function on scroll and resize events
+    window.addEventListener('scroll', adjustPadding);
+    window.addEventListener('resize', adjustPadding);
+
+    // Initial call to set the padding when the page loads
+    adjustPadding();
+} else {
+    console.error("The element '.c2.picture' was not found in the DOM.");
+}
