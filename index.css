@@ -593,4 +593,8 @@ p {
         width: 10vh;
         height: 10vh;
     }
+
+    .contact-information-container {
+        flex-direction: column;
+    }
 }
