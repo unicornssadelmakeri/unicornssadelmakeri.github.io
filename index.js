@@ -1,30 +1,13 @@
-// Handles the short information text and center paragraph
-fetch('assets/information.json')
+fetch('assets/text/information.json')
     .then(response => response.json())
     .then(data => {
-
-        //1const paragraphArr = Object.values(data.paragraphs);
-        const sec1 = Object.values(data.section1);
-        document.getElementById('section-1-title').textContent = sec1[0];
-        document.getElementById('section-1-paragraph').textContent = sec1[1];
-        console.log(sec1);
-
-        const sec2 = Object.values(data.section2);
-        document.getElementById('section-2-title').textContent = sec2[0];
-        document.getElementById('section-2-paragraph').textContent = sec2[1];
-        console.log(sec2[0]);
-
-        const sec3 = Object.values(data.section3);
-        document.getElementById('section-3-title').textContent = sec3[0];
-        console.log(sec3[0]);
-
-        const sec4 = Object.values(data.section4);
-        document.getElementById('section-4-title').textContent = sec4[0];
-        console.log(sec4[0]);
-
+        section1(data);
+        section2(data);
+        section3(data);
+        section4(data);
     }).catch(error => console.error('Error loading text:', error));
 
-fetch('assets/prices.json')
+fetch('assets/text/prices.json')
     .then(response => response.json())
     .then(data => {
         let html = '<div class="pricing-list">';
@@ -74,10 +57,57 @@ fetch('assets/prices.json')
         });
     }).catch(error => console.error('Error loading JSON:', error));
 
-fetch('assets/information.json')
-    .then(response => response.json())
-    .then(data => {
+function section1(data) {
+    try {
+        const sec1 = Object.values(data.section1);
+        document.getElementById('section-1-title').textContent = sec1[0];
+
+        let html = '';
+        sec1.forEach((item, index) => {
+            if(index == 0) { 
+                return; }
+            html += `<p id="section-1-paragraph">${item}</p>`;
+        });
+
+        document.getElementById('section-1-paragraphs').innerHTML = html;
+
+    } catch(error) {
+        console.error('Error loading text:', error);
+    }
+}
+
+function section2(data) {
+    try {
+        const sec2 = Object.values(data.section2);
+        document.getElementById('section-2-title').textContent = sec2[0];
+        let html = '';
+        sec2.forEach((item, index) => {
+            if(index == 0) { 
+                return; }
+            html += `<p id="section-2-paragraph">${item}</p>`;
+        });
+
+        document.getElementById('section-2-paragraphs').innerHTML = html;
+
+    } catch(error) {
+        console.error('Error loading text:', error);
+    }
+}
+
+function section3(data) {
+    try {
+        const sec3 = Object.values(data.section3);
+        document.getElementById('section-3-title').textContent = sec3[0];
+    } catch(error) {
+        console.error('Error loading text:', error);
+    }
+}
+
+function section4(data) {
+    try {
         const sec4 = Object.values(data.section4);
+        document.getElementById('section-4-title').textContent = sec4[0];
+
         let html = '';
         sec4.forEach((item, index) => {
             if(index == 0) { 
@@ -94,47 +124,7 @@ fetch('assets/information.json')
             container.classList.toggle('expanded');
             toggleArrow.classList.toggle('expanded');
         });
-    })
-    .catch(error => console.error('Error loading text:', error));
-
-// Select the element to watch
-const pictureContainer = document.querySelector('.c2.picture');
-
-// Check if the element exists before adding event listeners
-if (pictureContainer) {
-    // Function to adjust padding based on vertical position
-    function adjustPadding() {
-        const rect = pictureContainer.getBoundingClientRect();
-        
-        // Get the element's position relative to the viewport
-        const elementTop = rect.top;  // Distance from top of the viewport
-        const elementHeight = rect.height;  // Element's height
-        
-        // Get the height of the viewport
-        const viewportHeight = window.innerHeight;
-
-        // Here, you can adjust the padding based on the position of the element
-        let newPadding = '1vw';  // Default padding
-
-        // Adjust the padding dynamically based on the element's position
-        if (elementTop < viewportHeight * 0.5) {
-            newPadding = '3vw';  // Increase padding
-        } else if (elementTop < viewportHeight * 0.75) {
-            newPadding = '2vw';  // Medium padding
-        } else {
-            newPadding = '0.5vw';  // Decrease padding
-        }
-
-        // Apply the new padding to the element
-        pictureContainer.style.padding = newPadding;
+    } catch(error) {
+        console.error('Error loading text:', error);
     }
-
-    // Call the function on scroll and resize events
-    window.addEventListener('scroll', adjustPadding);
-    window.addEventListener('resize', adjustPadding);
-
-    // Initial call to set the padding when the page loads
-    adjustPadding();
-} else {
-    console.error("The element '.c2.picture' was not found in the DOM.");
 }

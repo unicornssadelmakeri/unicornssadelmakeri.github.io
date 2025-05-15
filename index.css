@@ -585,6 +585,10 @@ p {
         background: linear-gradient(to right, transparent, var(--dark-blue), transparent);
     }
 
+    .underline.pricing {
+        background: linear-gradient(to right, transparent, var(--dark-blue), transparent);
+    }
+
     .c2.picture {
         padding: 10px;
     }
