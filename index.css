@@ -37,7 +37,7 @@
 
 .title-container {
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -287,10 +287,23 @@ p {
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 50vh;
+}
+
+.c2 {
+    display: flex;
+}
+
+.c2.center-picture {
+    position: relative;
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 .c2.center {
-    display: flex;
     width: 60%;
     flex-direction: column;
     justify-content: center;
@@ -300,7 +313,6 @@ p {
 
 .c2.information {
     flex: 1;
-    display: flex;
 }
 
 .c3.information {
@@ -412,6 +424,12 @@ p {
     position: absolute;
 }
 
+.flair.center {
+    
+    width: 20vw;
+    height: 10vw;
+}
+
 .bottom {
     bottom: 0;
 }
@@ -464,6 +482,14 @@ p {
     background: linear-gradient(to right, var(--dark-blue), var(--medium-blue), transparent);
 }
 /*   ---------------- FLAIR END ----------------   */
+
+.c5.desktop-view {
+    display: block;
+}
+
+.c5.phone-view {
+    display: none;
+}
 
 .pricing-list {
     width: 100%;
@@ -537,6 +563,7 @@ p {
         margin-top: 100px;
     }
 
+    .c2.center-picture,
     .c2.center,
     .c2.more,
     .c4 {
@@ -550,11 +577,11 @@ p {
         gap: 100px;
     }
 
-    .c2.information.sec2:first-child {
+    .c2.information.sec3:first-child {
         order: 2;
     }
 
-    .c2.information.sec2:last-child {
+    .c2.information.sec3:last-child {
         order: 1;
     }
 
@@ -568,10 +595,12 @@ p {
         padding: 10px;
     }
     
+    .c3.pricing,
     .c3.information {
         justify-content: center;
     }
-
+    
+    .c4.pricing,
     .c4.paragraph {
         margin: 0;
     }
@@ -600,5 +629,13 @@ p {
 
     .contact-information-container {
         flex-direction: column;
+    }
+
+    .c5.desktop-view {
+        display: none;
+    }
+
+    .c5.phone-view {
+        display: block;
     }
 }
