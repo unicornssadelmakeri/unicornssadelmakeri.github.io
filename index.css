@@ -317,6 +317,7 @@ p {
 
 .c3.information {
     justify-content: end;
+    overflow: hidden;
 }
 
 .c4.paragraph {
@@ -597,6 +598,7 @@ p {
     
     .c3.pricing,
     .c3.information {
+        max-height: 80vh;
         justify-content: center;
     }
     
