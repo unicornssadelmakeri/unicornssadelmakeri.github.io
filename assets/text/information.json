@@ -5,6 +5,15 @@
         "paragraph1": "Nyhet på gång! I höst kommer en ny riktning inom sadelutveckling - med hästens rörelse och välmående i fokus."
     },
     "section2": {
+        "title": "Test Titel",
+        "paragraph0": "Test paragraf 1",
+        "paragraph1": "Test paragraf 2",
+        "paragraph2": "Test paragraf 3"
+    },
+    "section3": {
+        "title": "Priser"
+    },
+    "section4": {
         "title": "Freedom of Movement",
         "paragraph0": "Känslan när din häst kan röra sig fritt är obetalbar. När bogbladet får plats att rotera, när manken är fri och trapeziusmuskeln kan arbeta utan att klämmas – då kan hästen verkligen lätta sin front och börja bära mer vikt på bakbenen.",
         "paragraph1": "En fri överlinje gör att hästen kan slappna av, sträcka ut sig och arbeta dynamiskt med sina muskler - bygga styrka och aktivera både bukmuskulatur och bakdel. Kontraktion - och sedan längning.",
@@ -13,17 +22,5 @@
         "paragraph4": "Ändå så försöker hästen. För hästar är så vänliga och anpassningsbara att de gör sitt bästa trots smärta - genom att kompensera med skyddstrategier. De håller vissa muskler i konstant kontraktion för att ändå kunna röra sig som förväntat av dem trots begränsningarna vi gett dem.",
         "paragraph5": "Därför är valet av sadel inte bara en fråga om ryttarens komfort - det är avgörande för hästens hållbarhet, utveckling, välmående och rörelsefrihet.",
         "paragraph6": "Det fina är att lösning finns. Med rätt konstruktion av sadeln, rätt anpassning av ullen i bossan med respekt för hästens kropp kan vi ge tillbaka rörelsefriheten och glädjen - och låta varje steg bli ett uttryck för frihet, lätthet och balans. En långsiktlig lösning. Där du inte behöver byta sadel eller bomvidd, bara för att hästen har ändrat sig muskulärt, det finns ett hållbart sadelägande som även tillåter din häst att utveckla sig. Skillnaden är vilken kunskapsnivå som din sadelinprovare har."
-    },
-    "section3": {
-        "title": "Priser"
-    },
-    "section4": {
-        "title": "Om mig",
-        "paragraph0": "Min relation med hästar började redan när jag satt i barnvagnen - med knäckebröd i handen matandes hästarna nedanför huset. Sedan följde vild galopp på shetlandsponnyer, slädturer i snön, träning och tävling i dressyr och hoppning. Voltige, ståendes barfota på vår voltigehäst, Knabstrupper, Kickans rumpa i full galopp med mina två kompisar i grundsits och knästående framför mig. Jag var liten, men redan då så visste jag att hästar är min värld.",
-        "paragraph1": "När jag som 20-åring sökte en sadel till min egen häst som respekterade både hästens och ryttarens behov, insåg jag hur svårt det var att hitta. Det blev startpunkten för min resa - 7 år senare så började jag utbilda mig till sadelmmakare. Det finns inga genvägar. Desto mindre du vet om sadlar och hästar, desto lättare tror du att det är att prova ut en sadel. Det är inte lätt, både sadlar och hästar är väldigt komplext",
-        "paragraph2": "Jag är utbildad inom klassiskt sadelmakeri vid Utbildning Nord och Tärnsjö Sadelmakeriskola. Det finns inga genvägar, internetkurser, eller helgkurser som är sponsrade av sadelmärken som kan kompensera för lång erfarenhet eller utbildning. Desto mindre utbildad du är desto mer tror du att du kan. Sadelkonstruktion, häst och ryttare är komplext och det behövs kunskap och erfarenhet för att få det att fungera. .",
-        "paragraph3": "Jag gjorde ett godkänt arbetsprov 2003 med en handsydd dressyrsadel. 2011 så gjorde jag ett arbetsprov, efter 7 år i yrket med en handsydd hoppsadel som blev godkänd för mästarbrevet. Jag har vunnit flera Svenska mästerskap i sadelmakeri som har skickats till hovsadelmakarna i London för bedömning men det som präglar mitt arbete är respekten för hästens välmående och rörelseförmåga.",
-        "paragraph4": "Idag så är min drivkraft i mitt företag densamma som för 20 år sedan när jag startade, jag driver mitt företag med passion, respekt och kompromisslöshet inför hästens välmående och frihet att röra sig. Jag vet att det går att tillverka sadlar som inte bara känns bra för ryttaren – utan som också låter hästen röra sig helt fritt. Det handlar inte om märke. Det handlar om konstruktionen av sadeln.",
-        "paragraph5": "För mig så handlar sadeln inte om mode eller märke. Den handlar om funktion, biomekanik och välmående - och att bevara det ömsesidiga förtroendet mellan häst och ryttare. Ett förtroende som är ovärdeligt - och som är för mig aldrig förhandlingsbart."
     }
 }
