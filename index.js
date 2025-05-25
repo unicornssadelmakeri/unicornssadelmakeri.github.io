@@ -83,8 +83,13 @@ function section2(data) {
         let html = '';
         sec2.forEach((item, index) => {
             if(index == 0) { 
-                return; }
-            html += `<p id="section-2-paragraph">${item}</p>`;
+                return; 
+            } else if(index == sec2.length-1) {
+                console.log("test")
+                html += `<p class="section-2-paragraph quote">${item}</p>`;
+            } else {
+                html += `<p class="section-2-paragraph">${item}</p>`;
+            }
         });
 
         document.getElementById('section-2-paragraphs').innerHTML = html;
