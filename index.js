@@ -1,4 +1,4 @@
-fetch('assets/text/information.json')
+fetch('https://unicornssadelmakeri.se/assets/text/information.json')
     .then(response => response.json())
     .then(data => {
         section1(data);
@@ -7,7 +7,7 @@ fetch('assets/text/information.json')
         section4(data);
     }).catch(error => console.error('Error loading text:', error));
 
-fetch('assets/text/prices.json')
+fetch('https://unicornssadelmakeri.se/assets/text/prices.json')
     .then(response => response.json())
     .then(data => {
         let html = '<div class="pricing-list">';
