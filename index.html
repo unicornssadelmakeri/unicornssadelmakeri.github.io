@@ -12,6 +12,14 @@
 
 <body style="margin: 0;">
 
+    <script>
+        if (location.hostname.endsWith("github.io")) {
+            const base = document.createElement("base");
+            base.href = "/";
+            document.head.appendChild(base);
+        }
+    </script>
+
     <div class="top-container">
         <div class="picture-container">
             <img src="assets/banner/banner.PNG" alt="image 2">
