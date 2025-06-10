@@ -85,7 +85,6 @@ function section2(data) {
             if(index == 0) { 
                 return; 
             } else if(index == sec2.length-1) {
-                console.log("test")
                 html += `<p class="section-2-paragraph quote">${item}</p>`;
             } else {
                 html += `<p class="section-2-paragraph">${item}</p>`;
@@ -142,8 +141,7 @@ function copyInformation() {
         const text = email.textContent;
 
         navigator.clipboard.writeText(text).then(() => {
-            // Optional: show a confirmation
-            email.textContent = "Copied!";
+            email.textContent = "Kopierad!";
             setTimeout(() => {
                 email.textContent = text;
             }, 1000);
@@ -157,8 +155,7 @@ function copyInformation() {
         const phoneNumber = "+46706364978"
 
         navigator.clipboard.writeText(phoneNumber).then(() => {
-            // Optional: show a confirmation
-            number.textContent = "Copied!";
+            number.textContent = "Kopierad!";
             setTimeout(() => {
                 number.textContent = text;
             }, 1000);
@@ -169,3 +166,29 @@ function copyInformation() {
 }
 
 window.onload = copyInformation;
+
+function animateImageFrames() {
+    const containers = document.querySelectorAll('.c2.picture, .c2.center-picture');
+
+    const shrinkThreshold = 100;
+    const unshrinkThreshold = 160;
+
+    const viewportCenter = window.innerHeight / 2;
+
+    containers.forEach(container => {
+        const rect = container.getBoundingClientRect();
+        const elementCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(viewportCenter - elementCenter);
+
+        const isShrunk = container.classList.contains('shrink');
+
+        if (!isShrunk && distance < shrinkThreshold) {
+            container.classList.add('shrink');
+        } else if (isShrunk && distance > unshrinkThreshold) {
+            container.classList.remove('shrink');
+        }
+    });
+}
+
+window.addEventListener('scroll', animateImageFrames);
+window.addEventListener('load', animateImageFrames);

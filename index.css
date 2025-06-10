@@ -101,11 +101,11 @@ h1 {
     text-shadow: 0 0 5px black, 0 0 10px black;
     font-weight: 400;
     font-style: normal;
-    animation: titleFadeIn 0.5s linear;
+    animation: titleFadeIn 0.5s ease;
 }
 
 @keyframes titleFadeIn {
-    0% { opacity: 0; transform: translateY(-15%); }
+    0% { opacity: 0; transform: translateY(-20%); }
     100% { opacity: 1; transform: translateY(0%); }
 }
 
@@ -315,6 +315,12 @@ p.quote {
     justify-content: center;
     padding: 15px;
     box-sizing: border-box;
+    transition: padding 0.2s ease;
+}
+
+.c2.center-picture.shrink {
+    padding: 0px;
+    transition: padding 0.2s ease;
 }
 
 .c2.center {
@@ -354,12 +360,18 @@ p.quote {
     padding: 1vw;
 }
 
+.c2.picture.shrink {
+    padding: 0px;
+    transition: padding 0.2s ease;
+}
+
 .c2.picture {
     position: relative;
     width: 100%;
     height: 100%;
     padding: 15px;
     box-sizing: border-box;
+    transition: padding 0.2s ease;
 }
 
 .c3.picture {
@@ -373,29 +385,23 @@ p.quote {
 }
 
 .c4.picture {
-    display: flex;
-    height: 100%;
-    width: 100%;
-}
-
-.c5.picture {
     height: 100%;
     width: 100%;
     overflow: hidden;
 }
 
-.c5.picture img {
+.c4.picture img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     display: block;
 }
 
-.c5.picture.working img {
+.c4.picture.working img {
     object-position: 50% 75%;
 }
 
-.c5.picture.by-saddles img {
+.c4.picture.by-saddles img {
     object-position: 50% 35%;
 }
 
@@ -431,6 +437,7 @@ p.quote {
     left: 0;
     height: 100%;
     width: 100%;
+    z-index: 3;
 }
 
 .flair {
