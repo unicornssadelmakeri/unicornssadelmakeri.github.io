@@ -133,3 +133,39 @@ function section4(data) {
         console.error('Error loading text:', error);
     }
 }
+
+function copyInformation() {
+    const email = document.getElementById("copyEmail");
+    const number = document.getElementById("copyNumber");
+
+    email.addEventListener("click", () => {
+        const text = email.textContent;
+
+        navigator.clipboard.writeText(text).then(() => {
+            // Optional: show a confirmation
+            email.textContent = "Copied!";
+            setTimeout(() => {
+                email.textContent = text;
+            }, 1000);
+        }).catch(err => {
+            console.error("Failed to copy text:", err);
+        });
+    });
+
+    number.addEventListener("click", () => {
+        const text = number.textContent;
+        const phoneNumber = "+46706364978"
+
+        navigator.clipboard.writeText(phoneNumber).then(() => {
+            // Optional: show a confirmation
+            number.textContent = "Copied!";
+            setTimeout(() => {
+                number.textContent = text;
+            }, 1000);
+        }).catch(err => {
+            console.error("Failed to copy text:", err);
+        });
+    });
+}
+
+window.onload = copyInformation;

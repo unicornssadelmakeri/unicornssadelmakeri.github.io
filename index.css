@@ -8,10 +8,15 @@
     --dark-blue: rgb(70,132,169);
     --light-grey: rgb(250,250,250);
     --medium-grey: rgb(150,150,150);
-    --very-dark-blue: rgb(56, 67, 74)
+    --very-dark-blue: rgb(37, 103, 141);
+    --blue-subtext: rgb(120, 155, 190);
+    --dark-blue-background: rgb(30, 50, 60);
 }
 
 .top-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100vh
 }
@@ -21,7 +26,7 @@
     display: flex;
     overflow: hidden;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     justify-content: center;
     align-items: center;
@@ -37,9 +42,7 @@
 
 .title-container {
     position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 55%;
     z-index: 1;
     pointer-events: none;
 }
@@ -50,6 +53,7 @@
     height: 1.5em;
     display: block;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .arrow:hover {
@@ -59,17 +63,14 @@
 
 .arrow.down {
     position: absolute;
-    left: 50%;
     bottom: 3vh;
     width: 4em;
     height: 4em;
     fill: var(--medium-grey);
-    transform: translateX(-50%);
 }
 
 .arrow.more {
     fill: var(--dark-blue);
-    transition: transform 0.3s ease;
 }
 
 .arrow.price-arrow {
@@ -79,7 +80,6 @@
     width: 0.5em;
     height: 0.5em;
     fill: var(--dark-blue);
-    transition: transform 0.3s ease;
 }
 
 #price-arrow.expanded {
@@ -95,12 +95,18 @@
 h1 {
     font-family: Imperial Script;
     color: white;
-    font-size: 9rem;
+    font-size: 6rem;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     text-align: center;
     text-shadow: 0 0 5px black, 0 0 10px black;
     font-weight: 400;
     font-style: normal;
+    animation: titleFadeIn 0.5s linear;
+}
+
+@keyframes titleFadeIn {
+    0% { opacity: 0; transform: translateY(-15%); }
+    100% { opacity: 1; transform: translateY(0%); }
 }
 
 h2 {
@@ -109,7 +115,7 @@ h2 {
     text-align: center;
     font-weight: 400;
     font-style: normal;
-    color: var(--dark-blue);
+    color: var(--very-dark-blue);
     margin: 0;
     padding: 0;
     align-items: left;
@@ -131,11 +137,10 @@ h3 {
 p {
     font-size: 1rem;
     font-family: "Lato", sans-serif;
-    /*font-style: italic;*/
     font-weight: 300;
     letter-spacing: 1px;
     line-height: 2;
-    color: var(--dark-blue)
+    color: var(--blue-subtext);
 }
 
 p.quote {
@@ -174,7 +179,7 @@ p.quote {
 .contact-container {
     position: bottom;
     display: flex;
-    background-color: var(--very-dark-blue);
+    background-color: var(--dark-blue-background);
     width: 100%;
     height: auto;
     justify-content: center;
@@ -209,7 +214,8 @@ p.quote {
 }
 
 .contact-information-container p {
-    color: white
+    color: white;
+    cursor: pointer;
 }
 
 .contact-information-container i {
@@ -224,6 +230,10 @@ p.quote {
     justify-items: center;
     align-items: center;
     color: white;
+}
+
+.contact-info:hover {
+    transform: scale(1.05);
 }
 
 .contact-info p {
@@ -244,7 +254,7 @@ p.quote {
 }
 
 .social-icons img:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .imperial-script-regular {
@@ -559,8 +569,13 @@ p.quote {
 }
 
 @media (max-width: 768px) {
+
+    .arrow.down {
+        display: none;
+    }
+
     h1 {
-        font-size: 6rem;
+        font-size: 3rem;
     }
 
     .c1 {
